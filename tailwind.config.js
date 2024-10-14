@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class', // Enable dark mode based on a class
-  content: ["./node_modules/flowbite/**/*.js"], // Include Flowbite scripts for components
+  content: [
+    "./node_modules/flowbite/**/*.js", // Include Flowbite scripts for components
+    // Add any other paths to your content files here, e.g.:
+    "./src/**/*.{html,js}", // Adjust this to your project's structure
+  ],
   theme: {
     extend: {
       colors: {
