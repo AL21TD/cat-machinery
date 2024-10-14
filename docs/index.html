@@ -334,10 +334,13 @@
     </section>
 
     <!-- countries -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="relative bg-white dark:bg-gray-900">
+        <!-- Responsive Image for small screens -->
+        <img class="w-full md:hidden" src="/assets/MapChart_Map (1).png" alt="dashboard image">
+
         <div
             class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <div class="mt-4 md:mt-0">
+            <div class="mt-4 md:mt-0 z-10">
                 <h3 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">Active Regions</h3>
                 <div class="mb-6">
                     <div class="grid grid-cols-2 gap-4">
@@ -367,7 +370,6 @@
                                 <li>Ukraine</li>
                             </ul>
                         </div>
-
                         <div class="text-gray-500 dark:text-gray-400">
                             <p>Rest of the EU & International - inquiries welcome.</p>
                         </div>
@@ -395,10 +397,14 @@
                     </svg>
                 </a>
             </div>
-            <img class="w-full dark:hidden" src="/assets/MapChart_Map (1).png" alt="dashboard image">
-            <img class="w-full hidden dark:block" src="/assets/MapChart_Map (1).png" alt="dashboard image">
+
+            <!-- Responsive Image for large screens -->
+            <img class="absolute left-[70%] transform -translate-x-1/2 top-[8%] max-w-[60%] h-auto z-0 hidden md:block"
+                src="/assets/MapChart_Map (1).png" alt="dashboard image">
         </div>
     </section>
+
+
 
     <!-- Team -->
     <section class="bg-white dark:bg-gray-900 antialiased">
