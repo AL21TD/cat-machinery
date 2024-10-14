@@ -1,14 +1,30 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Enable dark mode based on a class
-  content: [
-    "./node_modules/flowbite/**/*.js", // Include Flowbite scripts for components
-    // Add any other paths to your content files here, e.g.:
-    "./src/**/*.{html,js}", // Adjust this to your project's structure
-  ],
+  content: ["./dist/*.{html,js}"],
+  darkMode: 'class',
   theme: {
     extend: {
+      animation: {
+        blob: "blob 7s infinite",
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "tranlate(0px, 0px) scale(1)",
+          },
+        },
+      },
       colors: {
+
+
         primary: {
           "50": "#eff6ff",
           "100": "#dbeafe",
@@ -20,11 +36,19 @@ module.exports = {
           "700": "#1d4ed8",
           "800": "#1e40af",
           "900": "#1e3a8a",
-          "950": "#172554"
+          "950": "#172554",
+          "1000": "#4E4B66",
+          "color-primary": "#75C044",
+          "color-primary-light": "#1bb7d5",
+          "color-primary-dark": "#00628f",
+          "color-secondary": "#fea71e",
+          "color-gray": "#333",
+          "color-white": "#fff",
+          "color-blob": "#A427DF"
         }
       },
       fontFamily: {
-        body: [
+        'body': [
           'Inter',
           'ui-sans-serif',
           'system-ui',
@@ -41,7 +65,7 @@ module.exports = {
           'Segoe UI Symbol',
           'Noto Color Emoji'
         ],
-        sans: [
+        'sans': [
           'Inter',
           'ui-sans-serif',
           'system-ui',
@@ -59,9 +83,14 @@ module.exports = {
           'Noto Color Emoji'
         ]
       }
-    }
+    },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [
-    require('flowbite/plugin') // Include Flowbite as a plugin
-  ]
-}
+    require('flowbite/plugin')({
+      charts: true,
+    }),
+  ],
+};
